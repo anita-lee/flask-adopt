@@ -3,18 +3,25 @@
 {% block title %}Adopt-a-Pet{% endblock %}
 
 {% block content %}
-<h1>Adoption Agency</h1>
-<h2>Pets</h2>
+<div class="container mb3">
+  <h1>Adoption Agency</h1>
+  <h2>Pets</h2>
+</div>
 
 {% for pet in pets %}
-    <h2 class="mt-4">
-      <img src="{{ pet.photo_url }}" alt="cute pet pic">
-    </h2>
-    <p>
-      <small>
-        <a href="/pets/{{ pet.id }}">{{ pet.name }}</a><b>is available!</b>
-      </small>
-    </p>
-{% endfor %}
+<div class="container mb3">
+  <h2 class="mt-4">
+    <img src="{{ pet.photo_url }}" alt="cute pet pic" class="img-thumbnail" width="250">
+  </h2>
+  <p>
+    <small>
+      <a href="/pets/{{ pet.id }}">{{ pet.name }}</a><b> is available!</b>
+    </small>
+  </p>
+  {% endfor %}
 
+  <div>
+    <a href="/add" class="btn btn-info">Add a Pet</a>
+  </div>
+</div>
 {% endblock %}}
