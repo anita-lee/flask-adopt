@@ -28,10 +28,3 @@ class Pet(db.Model):
     age = db.Column(db.Text, nullable=False)
     notes = db.Column(db.Text, nullable=False, default='')
     available = db.Column(db.Boolean, nullable=False, default=True)
-
-
-    @property
-    def full_name(self):
-        """Return full name of user."""
-
-        return f"{self.first_name} {self.last_name}"
